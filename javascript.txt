@@ -19,7 +19,7 @@ function extractData(fileName) {
   for (var i = 1; i < allLines.length; i++) {
     var data = allLines[i].split(",");
 
-    if (data.lengh == allLines[0].length) {
+    if (data.length == allLines[0].length) {
       var co2Data = {};
       for (var j = 0; j < allLines[0].Length; j++) {
         co2Data[data[j]] = data[allLines[0].length - 1];
@@ -39,7 +39,7 @@ function calculateScoreMeal(meal) {
   if (score < 0) {
     score = 0;
   }
-  return score;
+  document.getElementById("score").innerHTML = score;
 }
 
 function calculateScoreFood(food, grams) {
@@ -61,9 +61,52 @@ function highestScore(scores) {
       winners.push(key);
     }
   }
-  return winners;
+  return winners, highestScore;
 }
 
-function leaderboard() {
-  
+function leaderboard(scores) {
+  var temp = {};
+  var leaders = [];
+  for (var i = 0; i < scores.length; i++) {
+    var winners, highest = highestScore(scores)
+    for (var j = 0; j < winners.length; j++)
+      {
+        temp[winners[j]] = highest;
+        delete scores[winners[j]];
+        leaders.push(winners[j] + ', ' + highest);       
+      }
+  }
+  scores = temp;
+  document.getElementById("leaders").innerHTML = leaders;
 }
+
+//calculate carbon emission per ingredient listed
+function calcuCarbon(){
+  var ingredient = document.getElementById("set_ingredient").value;
+  var carbonEmissionPerKg = co2Data[ingredient];
+  var ingredientMass = document.getElementById("mass").value;
+  var carbonEmissionItem = carbonEmissionPerKg/1000 * ingredientMass;
+  document.getElementById("carbon").innerHTML = carbonEmissionItem;
+}
+
+//Go to Top Button
+var mybutton;
+mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
