@@ -1,41 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!-- itle of Website -->
-    <title> Carbon Footprint Calculator </title>
-    
+    <title>Carbon Footprint Calculator</title>
+
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="/style.css" />
+
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
-    
-  </head>  
-  
+  </head>
+
+  <!-- title & description -->
   <body>
-    <h1> Carbon Footprint Calculator </h1>
-    <h2> SUBTITLE GOES HERE </h2>
-    <p> Description goes here </p>
-    <p> Database found on <a href="https://ourworldindata.org/environmental-impacts-of-food"> Our World in Data </a> </p>
+    <h1>Carbon Footprint Calculator</h1>
+    <h2>based on your meal!</h2>
+    <p>Description goes here</p>
+    <p>
+      Database found on
+      <a href="https://ourworldindata.org/environmental-impacts-of-food">
+        Our World in Data
+      </a>
+    </p>
   </body>
- <form action = "">
-  <h3>Please select an ingredient </h3>
-  <fieldset>
-  <select id = "set_ingredient">
-   <option value = "CO2"> Beef </option>
-   <option value = "CO2"> Chicken </option>
-   <option value = "CO2"> Pork </option>
-  </select>
-   <input type="number" id="mass" name="mass"> g 
-   </fieldset>
-    </form>
-  <br>
+  
+  <!-- input ingredients -->
+  <form action="">
+    <h3>Please select an ingredient</h3>
+    <fieldset>
+      <select id="set_ingredient">
+        <option value="CO2"> Wheat & Rye (Bread) </option>
+        <option value="CO2"> Maize (Meal) </option>
+        <option value="CO2"> Barley (Beer) </option>
+        <option value="CO2"> Oatmeal </option>
+        <option value="CO2"> Rice </option>
+        <option value="CO2"> Potatoes </option>
+        <option value="CO2"> Cassava </option>
+        <option value="CO2"> Cane Sugar </option>
+        <option value="CO2"> Beet Sugar </option>
+        <option value="CO2"> Other Pulses </option>
+        <option value="CO2"> Peas </option>
+        <option value="CO2"> Nuts </option>
+        <option value="CO2"> Groundnuts </option>
+        <option value="CO2"> Soymilk </option>
+        <option value="CO2"> Tofu </option>
+        <option value="CO2"> Soybean Oil </option>
+        <option value="CO2"> Palm Oil </option>
+        <option value="CO2"> Sunflower Oil </option>
+        <option value="CO2"> Rapeseed Oil </option>
+        <option value="CO2"> Olive Oil </option>
+        <option value="CO2"> Tomatoes </option>
+        <option value="CO2"> Onions & Leeks </option>
+        <option value="CO2"> Root Vegetables </option>
+        <option value="CO2"> Brassicas </option><option value="CO2"> Beef </option>
+        <option value="CO2"> Other Vegetables </option>
+        <option value="CO2"> Citrus Fruit </option>
+        <option value="CO2"> Bananas </option>
+        <option value="CO2"> Apples </option>
+        <option value="CO2"> Berries & Grapes </option>
+        <option value="CO2"> Wine </option>
+        <option value="CO2"> Other Fruit </option>
+        <option value="CO2"> Coffee </option>
+        <option value="CO2"> Dark Chocolate </option><option value="CO2"> Beef </option>
+        <option value="CO2"> Beef (beef herd) </option>
+        <option value="CO2"> Beef (dairy herd) </option>
+        <option value="CO2"> Lamb & Mutton </option>
+        <option value="CO2"> Pig Meat </option>
+        <option value="CO2"> Poultry Meat </option>
+        <option value="CO2"> Milk </option>
+        <option value="CO2"> Cheese </option>
+        <option value="CO2"> Eggs </option>
+        <option value="CO2"> Fish (farmed) </option>
+        <option value="CO2"> Shrimps (farmed) </option>
+        
+      </select>
+      <input type="number" id="mass" name="mass" min = "1" /> g
+      
+      <input type="button" onclick="calcuCarbon()" value="Enter" />
+      
+    </fieldset>
+      <p>The Result is : <br>
+    <span id = "carbonItem"> </span>
+    </p>
+      </form>
+  <br />
+  
+  <!-- add more ingredients -->
   <button class="add">Add</button>
-  <button class="remove">remove</button>
-  <div id="new_chq"></div>
-  <input type="hidden" value="1" id="total_chq">
+  <button class="remove">Remove</button>
+<!--   <div id="new_chq"></div>
+  <input type="hidden" value="1" id="total_chq" /> -->
+  
+  <br>
+  <!-- move to top of website -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </html>
+
+
