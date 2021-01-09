@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- itle of Website -->
+    <title> Carbon Footprint Calculator </title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    
+  </head>  
+  
+  <body>
+    <h1> Carbon Footprint Calculator </h1>
+    <h2> SUBTITLE GOES HERE </h2>
+    <p> Description goes here </p>
+    <p> Database found on <a href="https://ourworldindata.org/environmental-impacts-of-food"> Our World in Data </a> </p>
+  </body>
+ <form action = "">
+  <h3>Please select an ingredient </h3>
+  <fieldset>
+  <select id = "set_ingredient">
+   <option value = "CO2"> Beef </option>
+   <option value = "CO2"> Chicken </option>
+   <option value = "CO2"> Pork </option>
+  </select>
+   <input type="number" id="mass" name="mass"> g 
+   </fieldset>
+    </form>
+  <br>
+  <button class="add">Add</button>
+  <button class="remove">remove</button>
+  <div id="new_chq"></div>
+  <input type="hidden" value="1" id="total_chq">
+</html>
