@@ -1,0 +1,69 @@
+$(document).ready(function() {
+  $.ajax({
+    type: "GET",
+    url: "GHG-emissions-by-life-cycle-stage-OurWorldinData-upload.csv",
+    dataType: "csv",
+    success: function(data) {
+      extractData(data);
+    }
+  });
+});
+
+var co2Data = extractData(
+  "GHG-emissions-by-life-cycle-stage-OurWorldinData-upload.csv"
+);
+
+function extractData(fileName) {
+  var allLines = fileName.split(/\r\n|\n/);
+
+  for (var i = 1; i < allLines.length; i++) {
+    var data = allLines[i].split(",");
+
+    if (data.lengh == allLines[0].length) {
+      var co2Data = {};
+      for (var j = 0; j < allLines[0].Length; j++) {
+        co2Data[data[j]] = data[allLines[0].length - 1];
+      }
+    }
+  }
+  alert(co2Data);
+  return co2Data;
+}
+
+function calculateScoreMeal(meal) {
+  var score = 0;
+  for (var key in meal) {
+    score = score + calculateScoreFood(key, meal[key]);
+  }
+  score = 100 - score;
+  if (score < 0) {
+    score = 0;
+  }
+  return score;
+}
+
+function calculateScoreFood(food, grams) {
+  var score = 0;
+  var kilograms = grams / 1000;
+  score = kilograms * co2Data[food];
+  return score;
+}
+
+function highestScore(scores) {
+  var highestScore = 0;
+  var winners = [''];
+  for (var key in scores){
+    if (scores[key] > highestScore) {
+      highestScore = scores[key];
+      winners = [key];
+    }
+    else if (scores[key] == highestScore) {
+      winners.push(key);
+    }
+  }
+  return winners;
+}
+
+function leaderboard() {
+  
+}
