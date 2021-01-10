@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,91 +23,248 @@
 
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="jquery.repeatable.js"></script>
   </head>
+  
+  <p>
 
   <!-- title & description -->
   <body>
-    <h1>Carbon Footprint Calculator</h1>
-    <h2>based on your meal!</h2>
-    <p>Description goes here</p>
-    <p>
-      Database found on
+    <h1> CALC - U - EATER      &nbsp; 
+    <img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_3_8024327755.png?v=1610255689865" alt="pacman">
+    <img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_22_2913802283.png?v=1610256614946" alt="calculator">
+    </h1> 
+
+    <h6> Find out your carbon footprint from your meal!
+      Made based on database found on
       <a href="https://ourworldindata.org/environmental-impacts-of-food">
         Our World in Data
       </a>
-    </p>
+    </h6>
+    
+    <img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Frsz_untitled_design.png?v=1610259023652" alt="food">
   </body>
-  
-  <!-- input ingredients -->
+  <br>
+  <!-- input ingredients 1. carbs ------------------------------------------------------------------------------------------------------------------------>
+  <h3>Pick your main ingredient for each category, leave blank if none</h3>
   <form action="">
-    <h3>Please select an ingredient</h3>
+    
+    <h3><img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_30_9681454086.png?v=1610259829483" alt="bread"> &nbsp; &nbsp; &nbsp; Please select a carbohydrate </h3>
+    <form>
+
+<div id="carb">
+  <div class="carb">
     <fieldset>
-      <select id="set_ingredient">
-        <option value="CO2"> Wheat & Rye (Bread) </option>
-        <option value="CO2"> Maize (Meal) </option>
-        <option value="CO2"> Barley (Beer) </option>
-        <option value="CO2"> Oatmeal </option>
-        <option value="CO2"> Rice </option>
-        <option value="CO2"> Potatoes </option>
-        <option value="CO2"> Cassava </option>
-        <option value="CO2"> Cane Sugar </option>
-        <option value="CO2"> Beet Sugar </option>
-        <option value="CO2"> Other Pulses </option>
-        <option value="CO2"> Peas </option>
-        <option value="CO2"> Nuts </option>
-        <option value="CO2"> Groundnuts </option>
-        <option value="CO2"> Soymilk </option>
-        <option value="CO2"> Tofu </option>
-        <option value="CO2"> Soybean Oil </option>
-        <option value="CO2"> Palm Oil </option>
-        <option value="CO2"> Sunflower Oil </option>
-        <option value="CO2"> Rapeseed Oil </option>
-        <option value="CO2"> Olive Oil </option>
-        <option value="CO2"> Tomatoes </option>
-        <option value="CO2"> Onions & Leeks </option>
-        <option value="CO2"> Root Vegetables </option>
-        <option value="CO2"> Brassicas </option><option value="CO2"> Beef </option>
-        <option value="CO2"> Other Vegetables </option>
-        <option value="CO2"> Citrus Fruit </option>
-        <option value="CO2"> Bananas </option>
-        <option value="CO2"> Apples </option>
-        <option value="CO2"> Berries & Grapes </option>
-        <option value="CO2"> Wine </option>
-        <option value="CO2"> Other Fruit </option>
-        <option value="CO2"> Coffee </option>
-        <option value="CO2"> Dark Chocolate </option><option value="CO2"> Beef </option>
-        <option value="CO2"> Beef (beef herd) </option>
-        <option value="CO2"> Beef (dairy herd) </option>
-        <option value="CO2"> Lamb & Mutton </option>
-        <option value="CO2"> Pig Meat </option>
-        <option value="CO2"> Poultry Meat </option>
-        <option value="CO2"> Milk </option>
-        <option value="CO2"> Cheese </option>
-        <option value="CO2"> Eggs </option>
-        <option value="CO2"> Fish (farmed) </option>
-        <option value="CO2"> Shrimps (farmed) </option>
-        
+        <select id="set_ingredient"> 
+<!--     carbohydrate      -->
+        <option value="0"> Wheat & Rye (Bread) </option>
+        <option value="1"> Maize (Meal) </option>
+        <option value="3"> Oatmeal </option>
+        <option value="4"> Rice </option>
+        <option value="5"> Potatoes </option>
+        <option value="6"> Cassava </option>
       </select>
-      <input type="number" id="mass" name="mass" min = "1" /> g
-      
-      <input type="button" onclick="calcuCarbon()" value="Enter" />
-      
+      <input type="number" id="mass" name="mass" min="1" /> g
+      <p>
+        The carbon emission for this ingredient is :
+        <span id="carbonItem"> </span> g
+       
+      </p>
+
+        <p><a href="#" class="remove">Remove Section</a></p>
+       
+
     </fieldset>
-      <p>The Result is : <br>
-    <span id = "carbonItem"> </span>
-    </p>
-      </form>
+  </div>
+</div>
+
+<p><a href="#" class="addsection">Add Section</a></p>
+
+</form>
+    </form>
+
+  <!-- input ingredients 2. veggie ------------------------------------------------------------------------------------------------------------------------>
+  <form action="">
+    <h3><img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_33_4320154952.png?v=1610260069792" alt="pepper"> &nbsp; &nbsp; &nbsp; Please select a vegetable</h3>
+<div id="veggie">
+  <div class="veggie">
+    <fieldset>
+      <select id="set_ingredient2">
+        <!--  vegtables -->
+        <option value="20"> Tomatoes </option>
+        <option value="21"> Onions & Leeks </option>
+        <option value="22"> Root Vegetables </option>
+        <option value="23"> Brassicas </option>
+        <option value="25"> Other Vegetables </option>
+      </select>
+      <input type="number" id="mass2" name="mass" min="1" /> g
+
+      <p>
+        The carbon emission for this ingredient is :
+        <span id="carbonItem2"> </span> g
+        <br />
+      </p>
+      <p><a href="#" class="remove2">Remove Section</a></p>
+    </fieldset>
+      </div>
+</div>
+    <p><a href="#" class="addsection2">Add Section</a></p>
+  </form>
+
+  <!-- input ingredients 3. fruits ------------------------------------------------------------------------------------------------------------------------>
+  <form action="">
+    <h3><img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_5_9369534837.png?v=1610260315916" alt="apple"> &nbsp; &nbsp; &nbsp; Please select a fruit</h3>
+    <div id="fruits">
+  <div class="fruits">
+    <fieldset>
+      <select id="set_ingredient3">
+        <!--  fruits -->
+        <option value="26"> Citrus Fruit </option>
+        <option value="27"> Bananas </option>
+        <option value="28"> Apples </option>
+        <option value="29"> Berries & Grapes </option>
+        <option value="31"> Other Fruit </option>
+      </select>
+      <input type="number" id="mass3" name="mass" min="1" /> g
+      <p>
+        The carbon emission for this ingredient is :
+        <span id="carbonItem3"> </span> g
+        <br />
+      </p>
+      <p><a href="#" class="remove3">Remove Section</a></p>
+    </fieldset>
+     </div>
+</div>
+    <p><a href="#" class="addsection3">Add Section</a></p>
+  </form>
+
+  <!-- input ingredients 4. protein ------------------------------------------------------------------------------------------------------------------------>
+  <form action="">
+    <h3><img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_12_7849481705.jpg?v=1610260609872" alt="eggnham"> &nbsp; &nbsp; &nbsp; Please select a protein</h3>
+    <div id="protein">
+  <div class="protein">
+    <fieldset>
+      <select id="set_ingredient4">
+        <!--     protein     -->
+        <option value="14"> Tofu </option>
+        <option value="24"> Beef </option>
+        <option value="34"> Beef </option>
+        <option value="35"> Beef (beef herd) </option>
+        <option value="36"> Beef (dairy herd) </option>
+        <option value="37"> Lamb & Mutton </option>
+        <option value="38"> Pig Meat </option>
+        <option value="39"> Poultry Meat </option>
+        <option value="41"> Cheese </option>
+        <option value="42"> Eggs </option>
+        <option value="43"> Fish (farmed) </option>
+        <option value="44"> Shrimps (farmed) </option>
+      </select>
+      <input type="number" id="mass4" name="mass" min="1" /> g
+      <p>
+        The carbon emission for this ingredient is :
+        <span id="carbonItem4"> </span> g
+        <br />
+      </p>
+      <p><a href="#" class="remove4">Remove Section</a></p>
+    </fieldset>
+    </div>
+</div>
+    <p><a href="#" class="addsection4">Add Section</a></p>
+  </form>
+
+  <!-- input ingredients 5. beverage ------------------------------------------------------------------------------------------------------------------------>
+  <form action="">
+    <h3><img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_15_9677737517.png?v=1610260804612" alt="cup"> &nbsp; &nbsp; &nbsp; Please select a beverage</h3>
+    <div id="beverage">
+  <div class="beverage">
+    <fieldset>
+      <select id="set_ingredient5">
+        <!--  drinks -->
+        <option value="2"> Barley (Beer) </option>
+        <option value="13"> Soymilk </option>
+        <option value="30"> Wine </option>
+        <option value="32"> Coffee </option>
+        <option value="40"> Milk </option>
+      </select>
+      <input type="number" id="mass5" name="mass" min="1" /> g
+      <p>
+        The carbon emission for this ingredient is :
+        <span id="carbonItem5"> </span> g
+        <br />
+      </p>
+      <p><a href="#" class="remove5">Remove Section</a></p>
+      </fieldset>
+    </div>
+</div>
+    <p><a href="#" class="addsection5">Add Section</a></p>
+  </form>
+
+  <!-- input ingredients 6. extras ------------------------------------------------------------------------------------------------------------------------>
+  <form action="">
+    <h3><img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Fimageedit_18_2874510033.png?v=1610261608003" alt="olive"> &nbsp; &nbsp; Please select a lipid / dressing / condiment</h3>
+    <div id="extras">
+  <div class="extras">
+    <fieldset>
+      <select id="set_ingredient6">
+        <!--  lipids and additives -->
+        <option value="7"> Cane Sugar </option>
+        <option value="8"> Beet Sugar </option>
+        <option value="9"> Other Pulses </option>
+        <option value="10"> Peas </option>
+        <option value="11"> Nuts </option>
+        <option value="12"> Groundnuts </option>
+        <option value="33"> Dark Chocolate </option>
+
+        <option value="15"> Soybean Oil </option>
+        <option value="16"> Palm Oil </option>
+        <option value="17"> Sunflower Oil </option>
+        <option value="18"> Rapeseed Oil </option>
+        <option value="19"> Olive Oil </option>
+      </select>
+      <input type="number" id="mass6" name="mass" min="1" /> g
+      <p>
+        The carbon emission for this ingredient is :
+        <span id="carbonItem6"> </span> g
+        <br />
+      </p>
+      <p><a href="#" class="remove6">Remove Section</a></p>
+    </fieldset>
+    </div>
+</div>
+        <p><a href="#" class="addsection6">Add Section</a></p>
+
+    
+  </form>
+
+  <!--    Display carbon emission for this ingredient on click    -->
+  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<button
+    type="button"
+    onclick=" calcuCarbon(); calculateScoreMeal();"
+    id="enter"
+    title="Enter"
+  >
+    Enter
+  </button>
+  <!-- overall calculations  ------------------------------------------------------------------------------------------------------------------------>
+
+  <p>
+    Total carbon emission of this meal is: <span id="carbonTotal"> </span> g
+  </p>
+  <p>The overall rated score is:
+  <span id="score"> </span>
+  / 100</p>
+  <br />
   <br />
   
-  <!-- add more ingredients -->
-  <button class="add">Add</button>
-  <button class="remove">Remove</button>
-<!--   <div id="new_chq"></div>
-  <input type="hidden" value="1" id="total_chq" /> -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top" style="float: right;"> Top </button>
+    
+  </p>
+
+<footer>
+ <img src="https://cdn.glitch.com/ae25ec97-4aef-4c94-becf-72bbd6f4265b%2Foutput-onlinepngtools%20(1).png?v=1610265356392" alt="footer"> 
+</footer>
   
-  <br>
-  <!-- move to top of website -->
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </html>
 
-
+<!--   <div id="reqs"><button type="button" value="Add" onclick="javascript:add();">Add</button> </div> -->
