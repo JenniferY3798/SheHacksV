@@ -1,0 +1,55 @@
+/* CSS files add styling rules to your content */
+
+body,
+h3,
+h6,
+p,
+form{
+  font-family: "Montserrat", sans-serif;
+  font-weight:900;
+  margin: 40px;
+  color: #417219
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 400%;
+  font-weight:800;
+  margin: 40px;
+  color: #73b240
+  padding:0;
+}
+
+img {
+  margin-bottom: -7px;
+}
+.w3-row-padding img {
+  margin-bottom: 12px;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+button {
+  background-color: #73b240;
+  color: white;
+  width: 15%;
+  padding: 14px 20px;
+  margin: 8px 10px;
+  border: none;
+  cursor: pointer;
+  
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+
+footer {
+  bottom: 0;
+  left: 0px;
+  width: 100%;
+}
